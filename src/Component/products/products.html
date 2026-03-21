@@ -1,0 +1,14 @@
+
+  <div class=" container-fluid">
+
+  <div class="row g-4">
+    @for (CurrentProduct of TheProduct; track $index) {
+          <div class="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+        <app-Product-clone [Product]="CurrentProduct"></app-Product-clone>
+        </div>
+    }
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

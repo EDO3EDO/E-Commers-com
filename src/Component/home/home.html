@@ -1,0 +1,18 @@
+
+  <div class="container-fluid">
+    <app-main-slider></app-main-slider>
+<h1>Shop Popular Catigories</h1>
+    <app-Home-Catigores></app-Home-Catigores>
+
+<h1>Popular Items This Seson</h1>
+  <div class="row">
+    @for (CurrentProduct of TheProduct; track $index) {
+      <div class="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+      <app-Product-clone [Product]="CurrentProduct"></app-Product-clone>
+      </div>
+    }
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

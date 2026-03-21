@@ -1,0 +1,18 @@
+
+<div class="row">
+  <div class="col-12 col-lg-9 p-0">
+        <owl-carousel-o [options]="customOptions">
+
+    @for (slide of imge; track $index) {
+      <ng-template carouselSlide>
+        <img class="object-fit-cover" height="400" [src]="slide">
+      </ng-template>
+    }
+
+  </owl-carousel-o>
+  </div>
+  <div class="col-3 p-0 d-none imges">
+    <img height="200" class="w-100" src="slide7.jpeg" alt="">
+    <img height="200" class="w-100" src="slider-image-3.jpeg" alt="">
+  </div>
+</div>

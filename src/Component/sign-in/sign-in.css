@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+
+
+  .media{
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+
+  .media_1{
+
+    margin-left: 1rem !important;
+
+    width: 12.5% !important;
+
+
+
+  }
+
+
+  .media_2{
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+
+  }

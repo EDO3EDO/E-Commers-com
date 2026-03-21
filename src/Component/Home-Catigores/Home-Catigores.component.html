@@ -1,0 +1,11 @@
+
+  <owl-carousel-o [options]="customOptions">
+
+    @for (imge of AllCatigores; track $index) {
+      <ng-template carouselSlide >
+        <img class="object-fit-cover" style="height: 200px;" [src]="imge.image" [alt]="imge.name" >
+        <p class="font-sm py-3 text-center">{{imge.name}}</p>
+      </ng-template>
+    }
+
+  </owl-carousel-o>

@@ -21,7 +21,12 @@
                 "input": "public"
               }
             ],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"],
             "styles": [
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ]
           },
@@ -81,5 +86,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "13bfe73a-0598-49e6-9e4a-e4ab26a009b0"
   }
 }

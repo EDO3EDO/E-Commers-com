@@ -1,0 +1,30 @@
+<div class=" container">
+  <div class="row">
+    <div  class="col-12 col-md-4 p-5 border my-5 ">
+
+      <owl-carousel-o [options]="customOptions">
+
+    @for (slide of ProductDetils?.images; track $index) {
+      <ng-template carouselSlide >
+              <img class="w-100 " [src]="slide" [alt]="ProductDetils?.title">
+      </ng-template>
+    }
+  </owl-carousel-o>
+    </div>
+    <div class="col-12 col-md-8 my-auto ">
+      <h2 class=" fw-bold pb-3">{{ProductDetils?.title}}</h2>
+      <p class="font-sm">{{ProductDetils?.description}}</p>
+      <span class="text-main fw-bold font-sm ">{{ProductDetils?.category?.name}}</span>
+      <p class=" pt-2 mb-0 font-sm"> Available Quatity: {{ProductDetils?.ratingsQuantity}}</p>
+      <p class="  font-sm"> Brand: {{ProductDetils?.brand?.name}}</p>
+      <div class="d-flex justify-content-between ">
+        <span class="font-sm fw-bold">{{ProductDetils?.price}} EGP</span>
+        <div class="d-flex">
+          <i class="fa-solid fa-star rating-color me-1 pt-1"></i>
+          <p>{{ProductDetils?.ratingsAverage}}</p>
+        </div>
+      </div>
+      <button class="bg-main btn w-100 text-white">+ Add To Cart</button>
+    </div>
+  </div>
+</div>

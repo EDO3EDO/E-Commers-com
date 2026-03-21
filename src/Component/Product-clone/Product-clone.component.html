@@ -1,0 +1,23 @@
+<a [routerLink]="['/ProudctDitels',Product._id]">
+
+  <div class=" container">
+  <div class="row">
+      <div>
+        <img class="w-100" [src]="Product.imageCover" [alt]="Product.title">
+        <span class="font-sm text-main fw-bold" >{{Product.category.name}}</span>
+        <p>{{Product.title.split(" ").slice(0,2).join(" ")}}</p>
+        <div class="d-flex  justify-content-between ">
+            <span class="font-sm">{{Product.price }} EGP</span>
+          <div>
+                    <i class=" fa-solid fa-star me-1 rating-color"></i>
+        <span class="font-sm">{{Product.ratingsAverage}}</span>
+          </div>
+        </div>
+        <button class="btn bg-main text-white w-100 my-2 ">+ Add To Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</a>

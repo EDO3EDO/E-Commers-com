@@ -1,0 +1,98 @@
+<div class="mx-auto w-50 my-5">
+  <form class="" [formGroup]="Sign_Up" (ngSubmit)="Signup(Sign_Up)" >
+    <h2 class=" text-main">SignUp Now :</h2>
+    @if (!MassgeError) {
+      <p class="alert alert-danger">{{MassgeError}}</p>
+    }
+    <label class=" form-label">UserName</label>
+    <input class=" form-control" placeholder="UserName" formControlName="name" type="text">
+
+
+        @if (Sign_Up.get("name")?.invalid && Sign_Up.get("name")?.touched) {
+  <div>
+    @if (Sign_Up.get("name")?.getError("required")) {
+      <p class="text-danger ms-3">The UserName Is Required </p>
+    }
+    @if (Sign_Up.get("name")?.getError("minlength")) {
+      <p class="text-danger ms-3">Min Length Is 4 Caracters </p>
+    }
+    @if (Sign_Up.get("name")?.getError("maxlength")) {
+      <p class="text-danger ms-3">Max Length Is 20 Caracters </p>
+    }
+  </div>
+}
+
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+    <label class=" form-label">Email</label>
+    <input class=" form-control" placeholder="@example.com" formControlName="Email" type="email">
+    @if (Sign_Up.get("Email")?.invalid && Sign_Up.get("Email")?.touched) {
+  <div>
+    @if (Sign_Up.get("Email")?.getError("required")) {
+      <p class="text-danger ms-3">The Email Is Required </p>
+    }
+    @if (Sign_Up.get("Email")?.getError("email")) {
+      <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
+    }
+  </div>
+}
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+    <label class=" form-label">Password</label>
+    <input class=" form-control" placeholder="********" formControlName="Password" type="password">
+
+      @if (Sign_Up.get("Password")?.invalid && Sign_Up.get("Password")?.touched) {
+  <div>
+    @if (Sign_Up.get("Password")?.getError("required")) {
+      <p class="text-danger ms-3">The Email Is Required </p>
+    }
+    @if (Sign_Up.get("Password")?.getError("minlength")) {
+      <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
+    }
+    @if (Sign_Up.get("Password")?.getError("maxlength")) {
+      <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
+    }
+                @if(Sign_Up.get("Password")?.hasError("Pattern")){
+            <p class="text-danger ms-3">Password does not meet the requirements.</p>
+          }
+  </div>
+}
+    <!-- ////////////////////////////////////////////////////////////// -->
+    <label class=" form-label">ConfirmPassword</label>
+    <input class=" form-control" formControlName="rePassword" placeholder="********"  type="password">
+
+
+        @if (Sign_Up.get("rePassword")?.invalid && Sign_Up.get("rePassword")?.touched) {
+        <div>
+          @if(Sign_Up.get("rePassword")?.getError("required")){
+            <p class="text-danger ms-3">The ConfirmPassword Is Required</p>
+          }
+          @if(Sign_Up.get("rePassword")?.hasError("Pattern")){
+            <p class="text-danger ms-3">Password does not meet the requirements.</p>
+          }
+        </div>
+      }
+
+
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+    <label class=" form-label">Phone</label>
+    <input class=" form-control"  placeholder="01000000000" formControlName="Phone" type="Phone">
+
+      @if (Sign_Up.get("Phone")?.invalid && Sign_Up.get("Phone")?.touched) {
+        <div>
+          @if(Sign_Up.get("Phone")?.getError("required")){
+            <p class="text-danger ms-3">The Phone Is Required</p>
+          }
+          @if(Sign_Up.get("Phone")?.getError("Pattern")){
+            <p class="text-danger ms-3">The</p>
+          }
+        </div>
+      }
+
+
+
+
+    <button  class="btn bg-main text-white w-100 media  my-3">Submit</button>
+  </form>
+</div>

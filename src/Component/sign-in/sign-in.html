@@ -1,0 +1,54 @@
+
+
+<div class="mx-auto my-5 w-50">
+
+<form class="" [formGroup]="Sign_In" (ngSubmit)="Signin(Sign_In)" >
+    <h2 class="text-main my-3">SignIn Now :</h2>
+    @if(Sign_In.errors){
+      <p class="alert alert-danger">{{MassegError}}</p>
+    }
+
+
+    <label class=" form-label">Email</label>
+    <input class=" form-control" formControlName="Email" placeholder="@example.com" type="email">
+@if (Sign_In.get("Email")?.invalid && Sign_In.get("Email")?.touched) {
+  <div>
+    @if (Sign_In.get("Email")?.getError("required")) {
+      <p class="text-danger ms-3">The Email Is Required </p>
+    }
+    @if (Sign_In.get("Email")?.getError("email")) {
+      <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
+    }
+  </div>
+}
+
+
+
+    <label class="form-label">Password</label>
+    <input class="form-control" formControlName="Password" placeholder="********" type="password">
+
+    @if (Sign_In.get("Password")?.invalid && Sign_In.get("Password")?.touched) {
+  <div>
+    @if (Sign_In.get("Password")?.getError("required")) {
+      <p class="text-danger ms-3">The Email Is Required </p>
+    }
+    @if (Sign_In.get("Password")?.getError("minlength")) {
+      <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
+    }
+    @if (Sign_In.get("Password")?.getError("maxlength")) {
+      <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
+    }
+  </div>
+}
+
+<div class=" media ">
+  <button class="btn bg-main text-white media_1 w-100  my-3">Submit</button>
+  <a routerLink="/ForgetPassword" class=" media_2 ms-4 pb-2 text-decoration-none  text-dark">ForgetPassword</a>
+</div>
+
+
+</form>
+</div>
+
+
+<router-outlet></router-outlet>
