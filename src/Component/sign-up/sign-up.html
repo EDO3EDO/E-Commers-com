@@ -25,13 +25,13 @@
 
     <!-- ////////////////////////////////////////////////////////////// -->
     <label class=" form-label">Email</label>
-    <input class=" form-control" placeholder="@example.com" formControlName="Email" type="email">
-    @if (Sign_Up.get("Email")?.invalid && Sign_Up.get("Email")?.touched) {
+    <input class=" form-control" placeholder="@example.com" formControlName="email" type="email">
+    @if (Sign_Up.get("email")?.invalid && Sign_Up.get("email")?.touched) {
   <div>
-    @if (Sign_Up.get("Email")?.getError("required")) {
-      <p class="text-danger ms-3">The Email Is Required </p>
+    @if (Sign_Up.get("email")?.getError("required")) {
+      <p class="text-danger ms-3">The email Is Required </p>
     }
-    @if (Sign_Up.get("Email")?.getError("email")) {
+    @if (Sign_Up.get("email")?.getError("email")) {
       <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
     }
   </div>
@@ -39,21 +39,21 @@
 
     <!-- ////////////////////////////////////////////////////////////// -->
     <label class=" form-label">Password</label>
-    <input class=" form-control" placeholder="********" formControlName="Password" type="password">
+    <input class=" form-control" placeholder="********" formControlName="password" type="password">
 
-      @if (Sign_Up.get("Password")?.invalid && Sign_Up.get("Password")?.touched) {
+      @if (Sign_Up.get("password")?.invalid && Sign_Up.get("password")?.touched) {
   <div>
-    @if (Sign_Up.get("Password")?.getError("required")) {
+    @if (Sign_Up.get("password")?.getError("required")) {
       <p class="text-danger ms-3">The Email Is Required </p>
     }
-    @if (Sign_Up.get("Password")?.getError("minlength")) {
+    @if (Sign_Up.get("password")?.getError("minlength")) {
       <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
     }
-    @if (Sign_Up.get("Password")?.getError("maxlength")) {
+    @if (Sign_Up.get("password")?.getError("maxlength")) {
       <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
     }
-                @if(Sign_Up.get("Password")?.hasError("Pattern")){
-            <p class="text-danger ms-3">Password does not meet the requirements.</p>
+                @if(Sign_Up.get("password")?.hasError("Pattern")){
+            <p class="text-danger ms-3">password does not meet the requirements.</p>
           }
   </div>
 }
@@ -77,14 +77,14 @@
 
     <!-- ////////////////////////////////////////////////////////////// -->
     <label class=" form-label">Phone</label>
-    <input class=" form-control"  placeholder="01000000000" formControlName="Phone" type="Phone">
+    <input class=" form-control"  placeholder="01000000000" formControlName="phone" type="phone">
 
-      @if (Sign_Up.get("Phone")?.invalid && Sign_Up.get("Phone")?.touched) {
+      @if (Sign_Up.get("phone")?.invalid && Sign_Up.get("phone")?.touched) {
         <div>
-          @if(Sign_Up.get("Phone")?.getError("required")){
-            <p class="text-danger ms-3">The Phone Is Required</p>
+          @if(Sign_Up.get("phone")?.getError("required")){
+            <p class="text-danger ms-3">The phone Is Required</p>
           }
-          @if(Sign_Up.get("Phone")?.getError("Pattern")){
+          @if(Sign_Up.get("phone")?.getError("Pattern")){
             <p class="text-danger ms-3">The</p>
           }
         </div>

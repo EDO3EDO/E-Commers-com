@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SIGN } from '../../Services/sign';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink, RouterOutlet } from "@angular/router";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -10,7 +10,7 @@ import { RouterLink, RouterOutlet } from "@angular/router";
   styleUrl: './sign-in.css',
 })
 export class SignIn {
-  constructor(private _SIGN:SIGN){
+  constructor(private _SIGN:SIGN , private _Router:Router){
 
   }
 
@@ -19,8 +19,8 @@ MassegError:string = " "
 token:any = " "
 
     Sign_In = new FormGroup({
-      Email:new FormControl("",[Validators.required , Validators.email]) ,
-      Password:new FormControl("", [Validators.required , Validators.minLength(8), Validators.maxLength(12)])
+      email:new FormControl("",[Validators.required , Validators.email]) ,
+      password:new FormControl("", [Validators.required , Validators.minLength(8), Validators.maxLength(12)])
     })
 
 
@@ -31,7 +31,10 @@ token:any = " "
 
           this.token = localStorage.setItem("token" , e.token)
 
-          ,this._SIGN.IsLogedIn.next(true)
+          ,this._SIGN.IsLogedIn.next(true),
+
+          this._Router.navigate([('/Home')])
+
 
         },
         error:(response) => {console.log(response),

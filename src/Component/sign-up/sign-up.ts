@@ -17,12 +17,12 @@ export class SignUp {
 
 
 
-Sign_Up =new FormGroup({
+Sign_Up = new FormGroup({
   name:new FormControl("",[Validators.required,Validators.minLength(4),Validators.maxLength(20)]),
-  Email:new  FormControl("",[Validators.required,Validators.email]),
-  Password:new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(12),Validators.pattern(/^[A-z].{5,}$/)]),
-      rePassword:new FormControl("",[Validators.required ,Validators.pattern(/^[A-z].{5,}$/) ]),
-  Phone:new FormControl("",[Validators.required , Validators.pattern(/^01[0125][0-9]{8}$/)])
+  email:new  FormControl("",[Validators.required,Validators.email]),
+  password:new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(12),Validators.pattern(/^[A-z].{5,}$/)]),
+  rePassword:new FormControl("",[Validators.required ,Validators.pattern(/^[A-z].{5,}$/) ]),
+  phone:new FormControl("",[Validators.required , Validators.pattern(/^01[0125][0-9]{8}$/)])
 })
 
 

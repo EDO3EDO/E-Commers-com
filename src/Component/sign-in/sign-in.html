@@ -9,14 +9,14 @@
     }
 
 
-    <label class=" form-label">Email</label>
-    <input class=" form-control" formControlName="Email" placeholder="@example.com" type="email">
-@if (Sign_In.get("Email")?.invalid && Sign_In.get("Email")?.touched) {
+    <label class=" form-label">email</label>
+    <input class=" form-control" formControlName="email" placeholder="@example.com" type="email">
+@if (Sign_In.get("email")?.invalid && Sign_In.get("email")?.touched) {
   <div>
-    @if (Sign_In.get("Email")?.getError("required")) {
+    @if (Sign_In.get("email")?.getError("required")) {
       <p class="text-danger ms-3">The Email Is Required </p>
     }
-    @if (Sign_In.get("Email")?.getError("email")) {
+    @if (Sign_In.get("email")?.getError("email")) {
       <p class="text-danger ms-3">Please enter a valid email (must include @) </p>
     }
   </div>
@@ -24,18 +24,18 @@
 
 
 
-    <label class="form-label">Password</label>
-    <input class="form-control" formControlName="Password" placeholder="********" type="password">
+    <label class="form-label">password</label>
+    <input class="form-control" formControlName="password" placeholder="********" type="password">
 
-    @if (Sign_In.get("Password")?.invalid && Sign_In.get("Password")?.touched) {
+    @if (Sign_In.get("password")?.invalid && Sign_In.get("password")?.touched) {
   <div>
-    @if (Sign_In.get("Password")?.getError("required")) {
+    @if (Sign_In.get("password")?.getError("required")) {
       <p class="text-danger ms-3">The Email Is Required </p>
     }
-    @if (Sign_In.get("Password")?.getError("minlength")) {
+    @if (Sign_In.get("password")?.getError("minlength")) {
       <p class="text-danger ms-3">Min Length Is 8 Caracters </p>
     }
-    @if (Sign_In.get("Password")?.getError("maxlength")) {
+    @if (Sign_In.get("password")?.getError("maxlength")) {
       <p class="text-danger ms-3">Max Length Is 12 Caracters </p>
     }
   </div>
@@ -43,7 +43,7 @@
 
 <div class=" media ">
   <button class="btn bg-main text-white media_1 w-100  my-3">Submit</button>
-  <a routerLink="/ForgetPassword" class=" media_2 ms-4 pb-2 text-decoration-none  text-dark">ForgetPassword</a>
+  <a routerLink="/Forgetpassword" class=" media_2 ms-4 pb-2 text-decoration-none  text-dark">ForgetPassword</a>
 </div>
 
 

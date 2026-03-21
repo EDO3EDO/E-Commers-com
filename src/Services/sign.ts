@@ -19,7 +19,7 @@ SignIn(form:object):Observable<any>{
 
 
 SignUp(form:object):Observable<any>{
-  return this._HttpClient.post("api-php-production-e48a.up.railway.app", form)
+  return this._HttpClient.post("https://ecommerce.routemisr.com/api/v1/auth/signup", form)
 }
 
 
