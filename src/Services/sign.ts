@@ -8,7 +8,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SIGN {
-  constructor(private _HttpClient:HttpClient , private _Router:Router){}
+
+  constructor(private _HttpClient:HttpClient , private _Router:Router){
+    if (localStorage.getItem('token') !== null) {
+    this.IsLogedIn.next(true);
+  }}
 
   IsLogedIn = new BehaviorSubject<boolean>(false) ;
 
@@ -26,10 +30,8 @@ SignUp(form:object):Observable<any>{
 SignOut(){
 
   localStorage.removeItem('token')
-
-
-this._Router.navigate([('/SignIn')])
-
+  this.IsLogedIn.next(false);
+  this._Router.navigate([('/SignIn')])
 }
 
 ForgetPassword(Form:Object){

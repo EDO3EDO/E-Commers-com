@@ -15,10 +15,12 @@
           <a class="nav-link" routerLinkActive="active" routerLink="Home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="Cart">Cart</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="Products">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="Products">Products</a>
+          <a class="nav-link" routerLinkActive="active" routerLink="Cart">
+            <i class="bi bi-cart4 font-large"></i>
+            Cart</a>
         </li>
       </ul>
 
@@ -60,7 +62,7 @@
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="SignUp">Sign Up</a>
           </li>
-        } @else {
+        } @else if (LoggedUser) {
           <li class="nav-item">
             <a class="nav-link text-danger cursor-pointer" (click)="Signout()">Sign Out</a>
           </li>

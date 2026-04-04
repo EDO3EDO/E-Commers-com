@@ -4,7 +4,7 @@
 
 <form class="" [formGroup]="Sign_In" (ngSubmit)="Signin(Sign_In)" >
     <h2 class="text-main my-3">SignIn Now :</h2>
-    @if(Sign_In.errors){
+    @if(MassegError){
       <p class="alert alert-danger">{{MassegError}}</p>
     }
 
@@ -42,10 +42,19 @@
 }
 
 <div class=" media ">
-  <button class="btn bg-main text-white media_1 w-100  my-3">Submit</button>
+  <button class="btn bg-main text-white media_1 w-100  my-3">
+
+
+@if (isloding) {
+  <span class="spinner-border"></span>
+}@else {
+  <span>Submit</span>
+}
+
+
+  </button>
   <a routerLink="/Forgetpassword" class=" media_2 ms-4 pb-2 text-decoration-none  text-dark">ForgetPassword</a>
 </div>
-
 
 </form>
 </div>

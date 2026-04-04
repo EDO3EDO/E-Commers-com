@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { SIGN } from '../../Services/sign';
 
@@ -11,7 +11,7 @@ import { SIGN } from '../../Services/sign';
 })
 export class Navbar implements OnInit {
 
-constructor(private _SIGN:SIGN){}
+constructor(private _SIGN:SIGN , private cdr:ChangeDetectorRef){}
 
 
 
@@ -21,7 +21,8 @@ ngOnInit(): void {
 
 
     this._SIGN.IsLogedIn.subscribe({
-      next:(response) => { this.LoggedUser = response }
+      next:(response) => { this.LoggedUser = response;
+      }
     })
 
 

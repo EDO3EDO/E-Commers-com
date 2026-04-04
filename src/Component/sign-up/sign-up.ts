@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import {  FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { SIGN } from '../../Services/sign';
 import { Router } from '@angular/router';
@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class SignUp {
 
-  constructor(private _SIGN:SIGN , private _Router:Router){}
+  constructor(private _SIGN:SIGN , private _Router:Router , private cdr:ChangeDetectorRef){}
 
-  MassgeError:any = " "
-
+  MassgeError:string = ''
+  isloding:boolean = false;
 
 
 Sign_Up = new FormGroup({
@@ -26,19 +26,28 @@ Sign_Up = new FormGroup({
 })
 
 
+
+
 Signup(form:FormGroup){
 
-
-  this._SIGN.SignUp(form.value).subscribe({
-    next:(e)=> {console.log(e),
+if(this.Sign_Up.valid){
+  this.isloding = true;
+    this._SIGN.SignUp(form.value).subscribe({
+    next:(e)=> {
+      this.isloding = false;
+      this.cdr.detectChanges();
+      console.log(e),
       this._Router.navigate([('/SignIn')])
     },
-    error:(err)=>{console.log(err),
-      this.MassgeError = err
+    error:(err)=>{
+      this.isloding = false;
+      this.MassgeError = err.error.message;
+      this.cdr.detectChanges();
+      console.log(err)
+
     }
   })
-
-
+}
 }
 
 

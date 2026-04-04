@@ -1,7 +1,7 @@
 <div class="mx-auto w-50 my-5">
   <form class="" [formGroup]="Sign_Up" (ngSubmit)="Signup(Sign_Up)" >
     <h2 class=" text-main">SignUp Now :</h2>
-    @if (!MassgeError) {
+    @if (MassgeError) {
       <p class="alert alert-danger">{{MassgeError}}</p>
     }
     <label class=" form-label">UserName</label>
@@ -93,6 +93,12 @@
 
 
 
-    <button  class="btn bg-main text-white w-100 media  my-3">Submit</button>
+    <button [disabled]="Sign_Up.invalid || isloding"  class="btn bg-main text-white w-100 media  my-3">
+      @if (isloding) {
+        <span class="spinner-border" ></span>
+      }@else {
+        <span>Submit</span>
+      }
+    </button>
   </form>
 </div>
