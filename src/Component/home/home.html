@@ -7,7 +7,7 @@
 <h1>Popular Items This Seson</h1>
   <div class="row">
     @for (CurrentProduct of TheProduct; track $index) {
-      <div class="col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2">
+      <div class="col-6 col-sm-4 col-md-3 col-xl-2 ">
       <app-Product-clone [Product]="CurrentProduct"></app-Product-clone>
       </div>
     }

@@ -1,14 +1,38 @@
 <div class=" container bg-main-light p-4 shadow my-5">
       <h2>Shopping Now :</h2>
-      <p>TotalPrice:{{Cart?.totalCartPrice}}</p>
+      <p class="text-main">TotalPrice: {{Cart?.totalCartPrice}}</p>
 
-      @for (Cart of Cart?.IProduct; track $index) {
+      @for (item of cartProducts; track $index) {
         <div class="row">
-        <div class="col-12">
-          <img [src]="Cart.imageCover" [alt]="Cart.title">
-          <p>{{Cart.price}}</p>
+        <div class="col-6 mb-3">
+          <div class="d-flex">
+                      <img width="200px" height="130px" class=" object-fit-contain" [src]="item.product.imageCover" [alt]="item.product.title">
+          <div>
+            <p class="my-1">{{item.product.title}}</p>
+            <p class="text-main my-1">price:{{item.price}}</p>
+            <div (click)="deleteCart(item.product._id)" class="d-flex cursor-pointer my-2">
+              <i class="text-main bi bi-trash3 pe-1"></i>
+              <p>Remove</p>
+            </div>
+          </div>
+          </div>
         </div>
+
+        <div class="col-2 offset-4 d-flex align-items-center">
+          <div (click)="UpdateCart(item.product._id , item.count - 1)" class="min">-</div>
+          <div>{{item.count}}</div>
+          <div (click)="UpdateCart(item.product._id , item.count + 1)" class="plus">+</div>
         </div>
+
+
+
+        <hr class="opacity-25">
+        </div>
+
       }
+
+
+      <button class=" ms-5 mt-3 btn p-2 bg-main text-light">Online Pyment</button>
+
 
 </div>

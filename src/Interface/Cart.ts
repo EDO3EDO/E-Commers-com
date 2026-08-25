@@ -1,7 +1,9 @@
 import { Catigores } from './Catigores';
 import { IProduct } from './IProduct';
+import { ProductDetiles } from './productDetiles';
+import { ProductsCart } from './products';
 export interface ICart {
-IProduct:IProduct[],
+products:ProductDetiles[],
 Catigores:Catigores,
 totalCartPrice:number
 

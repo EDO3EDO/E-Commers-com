@@ -28,7 +28,6 @@ SignUp(form:object):Observable<any>{
 
 
 SignOut(){
-
   localStorage.removeItem('token')
   this.IsLogedIn.next(false);
   this._Router.navigate([('/SignIn')])
