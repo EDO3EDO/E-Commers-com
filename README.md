@@ -1,59 +1,57 @@
-# App
+# 🛒 Fresh Cart
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+> A modern, responsive e-commerce web application built to provide a seamless online shopping experience with product browsing, filtering, and cart state management.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔗 Quick Links
 
-```bash
-ng serve
-```
+- **Live Demo:** [View Live Demo](https://edo3edo.github.io/E-Commers-com/Home)
+- **Status:** Finished / Live
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🎥 Project Demo
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+![Fresh Cart Demo](./public/demo.gif)
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Tech Stack
 
-```bash
-ng generate --help
-```
+- **Frontend:** Angular, Standalone Components, TypeScript, RxJS
+- **Backend:** .Net
+- **Styling & UI:** Bootstrap 5, Font Awesome, Custom CSS (HEX values)
+- **API Communication:** Angular HttpClient, RxJS, Dependency Injection
+- **Deployment:** GitHub Pages
 
-## Building
+---
 
-To build the project run:
+## ✨ Key Features
 
-```bash
-ng build
-```
+- **Product Catalog & Browsing:** Dynamic product listing with smooth grid layouts and category filtering.
+- **Shopping Cart Management:** Add, update quantities, and remove items seamlessly using API requests.
+- **User Authentication:** Secure login and registration flows with token-based session handling.
+- **Responsive Design:** Fully optimized UI layout across mobile, tablet, and desktop screens.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 💡 Technical Challenges & Solutions
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1. **Challenge 1 (Moving API calls from Components to Services):**
+   - _What happened:_ At first, I was writing all the API requests and HTTP methods directly inside the components, which made the code messy and hard to manage.
+   - _How I fixed it:_ I learned how to use Angular **Dependency Injection** and moved everything into dedicated **Services** to keep the components clean and well-organized.
+2. **Challenge 2 (Handling User Tokens):**
+   - _What happened:_ Needed a way to securely send the user token with requests so the backend could recognize authorized actions.
+   - _How I fixed it:_ Managed token storage properly and attached the authorization headers to the necessary API calls to keep user data secure.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## ⚙️ Getting Started
 
-For end-to-end (e2e) testing, run:
+To run this project locally:
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/USERNAME/E-Commers-com.git](https://github.com/USERNAME/E-Commers-com.git)
+   ```
